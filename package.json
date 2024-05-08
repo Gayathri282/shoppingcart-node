@@ -1,23 +1,67 @@
 {
+"homepage": "http://Gayathri282.github.io/shoppingcart-node",
   "name": "shoppingcart",
+  
   "version": "0.0.0",
+  
   "private": true,
+  
   "scripts": {
-    "start": "nodemon ./bin/www"
+  
+    
+  "start": "nodemon ./bin/www",
+  "predeploy":"npm run build",
+  "deploy":"gh-pages -d build"
+  
   },
+  
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "^4.19.2",
-    "express-fileupload": "^1.5.0",
-    "express-handlebars": "^7.1.2",
-    "express-session": "^1.18.0",
-    "hbs": "^4.2.0",
-    "http-errors": "~1.6.3",
-    "mongodb": "^6.5.0",
-    "morgan": "~1.9.1",
-    "nocache": "^4.0.0",
-    "razorpay": "^2.9.3"
+  
+    
+  "bcrypt": "^5.1.1",
+  
+    
+  "cookie-parser": "~1.4.4",
+  
+    
+  "debug": "~2.6.9",
+  
+    
+  "express": "^4.19.2",
+  
+    
+  "express-fileupload": "^1.5.0",
+  
+    
+  "express-handlebars": "^7.1.2",
+  
+    
+  "express-session": "^1.18.0",
+  
+    
+  "hbs": "^4.2.0",
+  
+    
+  "http-errors": "~1.6.3",
+  
+    
+  "mongodb": "^6.5.0",
+  
+    
+  "morgan": "~1.9.1",
+  
+    
+  "nocache": "^4.0.0",
+  
+    
+  "razorpay": "^2.9.3"
+  
+  },
+  
+  "devDependencies": {
+  
+    
+  "gh-pages": "^6.1.1"
+  
   }
 }
