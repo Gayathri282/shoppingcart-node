@@ -1,0 +1,41 @@
+<section>
+  <div class="container m-auto">
+    <div class="row">
+      <h2 class="text-center m-auto">Add Product</h2>
+    </div>
+    <div class="row col-12 " >
+      <form action="/admin/addProduct" class="m-auto" enctype="multipart/form-data" method="POST">
+     <input type="text" name="admin_id" class="form-control" hidden value={{admin_id}} >
+            <label for="">Name</label>
+            <input type="text" name="name" class="form-control" required>
+            <label for="">Category</label><br>
+             <input type="radio" name="category" value="female" required>Female
+        <input type="radio" name="category"  value="male" required>Male
+         <input type="radio" name="category" value="kids" required>Kids
+         <br>
+        <label for="">Price</label>
+        <input type="text" name="price" class="form-control" required>
+        <label for="">Description</label>
+        <input type="text" name="description" class="form-control" required> 
+        <label for="">image</label>
+        <input type="file"class="form-control" name="image" required>
+        <button type="submit" class="form-control mt-3">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media(max-width:786px){
+    section{
+      font-size: 8px;
+      
+    }
+    input{
+      font: inherit;
+    }
+    label{
+      font-size: inherit;
+    }
+  }
+</style>

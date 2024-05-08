@@ -1,0 +1,50 @@
+<section>
+    <div class="container">
+        <h3 class="text-center">Order History</h3>
+        <table class="table">
+            <thead>
+               <th scope="col">Date</th>
+               <th scope="col">Address</th>
+                <th scope="col">Pincode</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Total Amount</th>
+                <th scope="col">payment Method</th>
+                <th scope="col">Status</th>
+            </thead>
+            <tbody>
+                {{#each orders}}
+                <tr>
+                    <td>{{this.date}}</td>
+                      <td>{{this.deliveryDetails.address}}</td>
+                        <td>{{this.deliveryDetails.pincode}}</td>
+                          <td>{{this.deliveryDetails.mobile}}</td>
+                            <td>&#8377;{{this.total}}</td>
+                              <td>{{this.paymentMethod}}</td>
+                                <td>{{this.status}}</td>
+                                  <td><a href="/viewOrderProducts/{{this._id}}" class="btn btn-primary w-auto">View Products</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+<style>
+  @media(max-width:786px){
+    section{
+      font-size: 8px;
+    }
+    a{
+      font-size: inherit;
+    }
+    
+  }
+   @media(max-width:990px){
+    section{
+      font-size:10px;
+    }
+     a{
+      font-size: inherit;
+    }
+    
+  }
+</style>

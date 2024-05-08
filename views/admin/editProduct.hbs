@@ -1,0 +1,47 @@
+<section>
+  <div class="container m-auto">
+    <div class="row">
+      <h2 class="text-center m-auto">Edit Product</h2>
+    </div>
+    <div class="row " >
+      <form action="/admin/editProduct/{{product._id}}" class="m-auto" enctype="multipart/form-data" method="POST">
+            <label for="">Name</label>
+            <input type="text" name="name" class="form-control" value={{product.name}}>
+            <label for="">Category</label>
+            <br>
+             <input type="radio" name="category" value="female">Female
+        <input type="radio" name="category"  value="male">Male
+         <input type="radio" name="category" value="kids">Kids
+         <br>
+        {{!-- <input type="text" name="category" class="form-control" value={{product.category}}> --}}
+        <label for="">Price</label>
+        <input type="text" name="price" class="form-control" value={{product.price}}>
+        <label for="">Description</label>
+        <input type="text" name="description" class="form-control" value={{product.description}}>
+        <label for="">image</label>
+        <img src="/productImages/{{product._id}}.jpg" alt="" style="width: 100px;height:100px" class="m-4" id="imageView">
+        <input type="file"class="form-control" name="image" onchange="changeImage(event)">
+        <button type="submit" class="form-control mt-3">Submit</button>
+      </form>
+    </div>
+  </div>
+
+<script>
+    function changeImage(event){
+        document.getElementById('imageView').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>
+<style>
+  @media(max-width:786px){
+    section{
+      font-size: 8px;
+      
+    }
+    input{
+      font: inherit;
+    }
+    label{
+      font-size: inherit;
+    }
+  }
+</style>

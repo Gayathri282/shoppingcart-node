@@ -1,0 +1,28 @@
+    <section class="viewProducts">
+        <div class="container mt-3 text-center m-auto ">
+            <div class="row mt-3 ">
+              {{#each products}}
+                <div class="col-md-3 p-3">
+                    <div class="card m-auto" style="width: 15rem;border-radius:1rem;background:rgba(255, 255, 255)">
+                    
+                    <img src="/productImages/{{this._id}}.jpg" class="card-img-top m-auto pt-2" alt="..." style="width:200px;height:150px;border-radius:1rem">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <h2>&#8377;{{this.price}}</h2>
+                        <p class="card-text">{{this.description}}</p>
+                        {{!-- <a href="/addToCart/{{this._id}}" class="btn btn-primary">Add to Cart</a> --}}
+                        <button onclick="addToCart('{{this._id}}')" class="btn btn-primary mr-5">Add to Cart</button>   <i class="fa-solid fa-heart"  onclick="addToWishlist('{{this._id}}',this)"></i>
+                    </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    .red{
+        color: red;
+    }
+</style>

@@ -1,0 +1,42 @@
+<section>
+    <div class="container">
+        <table class="table">
+            <p>User ID:{{user._id}}</p>
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Title</th>
+                     <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr id="row_{{this.products._id}}">
+                    <td><img src="/productImages/{{this.products._id}}.jpg" alt="" style="width:100px;height:100px"></td>
+                    <td><p>{{this.products.name}}</p></td>
+                    <td><p>&#8377;{{this.products.price}}</p></td>
+                    <td>
+                        {{!-- {{#gt this.quantity 1}}
+                        <button class="cart-item-count mr-3 btn btn-dark" onclick="changeQuantity('{{this._id}}','{{this.products._id}}',-1)">-</button>{{this.quantity}}<button class="cart-item-count ml-3  btn btn-dark" onclick="changeQuantity('{{this._id}}','{{this.products._id}}',1)">+</button>
+                        {{else}}
+                        {{this.quantity}}<button class="cart-item-count ml-3  btn btn-dark" onclick="changeQuantity('{{this._id}}','{{this.products._id}}',1)">+</button>
+                        {{/gt}} --}}
+                         <button class="cart-item-count mr-3 btn btn-dark" onclick="changeQuantity('{{this._id}}','{{this.products._id}}','{{../user._id}}',-1)" id="decrement_{{this.products._id}}">-</button><span id="{{this.products._id}}">{{this.quantity}}</span><button class="cart-item-count ml-3  btn btn-dark" onclick="changeQuantity('{{this._id}}','{{this.products._id}}','{{../user._id}}',1)" >+</button>
+                    </td>
+                    {{!-- <td><p>{{parseInt this.products.price}}*{{ parseInt this.quantity}}</p></td> --}}
+                        <td>
+                             <button onclick=" deleteFromCart('{{this._id}}','{{this.products._id}}','{{user._id}}')" class="btn btn-danger">X</button>
+                            {{!-- <a href="/deleteProduct?cartId={{this._id}}&productId={{this.products._id}}" class="btn btn-danger" onclick="return confirm('Do you want to delete {{this.name}}')">X</a> --}}
+                            </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <hr class="mt-4"/>
+        <div class="p-3 float-right">
+            <h2>Total : &#8377;<span id="total">{{total}}</span></h2>
+            <a href="/placeOrder" class="btn btn-success w-100">Place Order</a>
+        </div>
+    </div>
+</section>
